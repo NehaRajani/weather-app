@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <title>Current weather information</title>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h2 class="text-center">Get Current Weather</h2>
+    </div>
+
+    <div class="container" style="height:auto;">
+        <div class="row" style="margin-bottom:20px">
+            <h3 class="text-center text-primary">Enter City Name</h3>
+        </div>
+
+        <div class="form-group form-inline" id="rowdiv">
+            <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
+            <button id="submitweather" class="btn btn-primary">Search City</button>
+        </div>
+
+        <h5 id="error" class="text-center"></h5>
+
+        <div id="show"></div>
+
+    </div>
+
+    <footer class="container-fluid">
+            <div class="row text-center" style="margin-top:auto; padding-top:25px;">
+                <p>Copyright &copy; Curent Weather App</p>
+            </div>
+    oga
+</footer>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <!-- Latest compiled JavaScript 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>>
+--><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script src="weatherapp.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--using emmet plugin to use html shortcuts-->
+    <!--an exclamator and enter will give u struature of html add cdn of bootstrap         
+ -->
+
+    <!--   Fonts used
+http://www.1001fonts.com/roboto-font....
+
+Fonts used for icons
+http://fontawesome.io/
+
+Font used for weather icons
+https://erikflowers.github.io/weather...
+-->
+
+    <!--  Creating a Jumbotron
+A jumbotron indicates a big box for calling extra attention to some special content or information.
+
+A jumbotron is displayed as a grey box with rounded corners. It also enlarges the font sizes of the text inside it.
+
+Tip: Inside a jumbotron you can put nearly any valid HTML, including other Bootstrap elements/classes.
+
+Use a <div> element with class .jumbotron to create a jumbotron:-->
+
+    <!--
+    API stands for Application Programming Interface. API is basically a way for programmers to communicate with certain applications. The use of APIs in building applications is becoming increasingly popular. 
+
+Open weather map API is simple, clear and free to use.​ 
+by this we can get current weather forcast dataa
+we can send request to api and get result in json format then from json response we ll get sepcific results we needed
+on the pg
+ 
+Calls to the open weather map API can be made by city name, city and country names, city ID or by geographical coordinates (latitude and longitude). The data returned as response from open weather map can either be in JSON or XML formats. The weather API provides current weather data, weather forecast data as well as historical weather data​. We can send requests to get current weather data or 5 day / 3 hour forecast or 16 day / daily forecast of around 200,000 cities around the world.
+
+In this course, we will build a complete weather app using the open weather map API. Our application uses jquery's ajax method to send the request to the weather API and then return the response. With our application, we will make API calls by city name to the open weather map API using Ajax to get response in JSON format. 
+
+In this course, you'll learn how to build the web application to
+
+Get and display current weather information like temperature, pressure, humidity, wind speed, wind direction etc. of any city.
+
+Retrieve specific data from JSON response
+
+the data is availble in json html and xml format in the api of weather 
+ie open weather map
+format we r oing to use for fethicng the data is JSON
+we are only using [js object notation(JSON) formats]
+Both JSON and XML can be used to receive data from a web server.
+ XML is a meta-language and JSON is a markup language.
+ JSON is Like XML Because
+Both JSON and XML are "self describing" (human readable)
+Both JSON and XML are hierarchical (values within values)
+Both JSON and XML can be parsed and used by lots of programming languages
+Both JSON and XML can be fetched with an XMLHttpRequest
+
+  JSON is Unlike XML Because
+JSON doesn't use end tag
+JSON is shorter
+JSON is quicker to read and write
+JSON can use arrays
+The biggest difference is:
+
+ XML has to be parsed with an XML parser. JSON can be parsed by a standard JavaScript function.
+
+Why JSON is Better Than XML
+XML is much more difficult to parse than JSON.
+JSON is parsed into a ready-to-use JavaScript object.
+When receiving data from a web server, the data is always a string.
+Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+You can request JSON from the server by using an AJAX request
+
+
+AJAX [AJAX = Asynchronous JavaScript and XML.] is a technique for creating fast and dynamic web pages. AJAX allows web pages to be updated asynchronously by exchanging small amounts of data with the server behind the scenes. 
+This means that it is possible to update parts of a web page, without reloading the whole page.
+web pages, (which do not use AJAX) must reload the entire page if the content should change.
+eg insta uses ajax as in every like coonet posted it does not relaod the whole pg.
+code eg <button type="button" onclick="loadDoc()">Change Content</button>
+he <button> calls a function (if it is clicked).
+The function requests data from a web server and displays it:
+AJAX is not a programming language.
+
+AJAX just uses a combination of:
+
+A browser built-in XMLHttpRequest object (to request data from a web server)
+JavaScript and HTML DOM (to display or use the data)
+AJAX is a misleading name. AJAX applications might use XML to transport data, but it is equally common to transport data as plain text or JSON text.
+
+Advantages of AJAX
+Reduce the traffic travels between the client and the server.
+Response time is faster so increases performance and speed.
+You can use JSON (JavaScript Object Notation) which is alternative to XML. ...
+You can use Firefox browser with an add-on called as Firebug to debug all Ajax calls.
+-->
