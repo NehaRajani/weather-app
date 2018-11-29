@@ -1,55 +1,68 @@
-h2{
-    font-size: 50px;
-    font-weight: 600;
+@media screen and (max-width: 480px) {
+    #image{
+        height: 30vh;
+        background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+    #details{
+        height: 70vh;
+    }
+    #logo{
+        height: 30px;
+        width: 30px;
+    }
+    .c{
+        position: absolute;
+        font-family: 'Open Sans', sans-serif;
+        top: 30%;   
+        left: 10%;
+        font-size: 20px;
+    }
+    .d{
+        position: absolute;
+        top: 90%;
+        left: 12%;
+    
+    }
 }
-.jumbotron{
-    margin-bottom: 0px;
-    color: antiquewhite;
-    background-color:#4aa1f3;
+#logo{
+    position: absolute;
 }
-
+#details{
+    display: block;
+}
+#details h3{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
 #rowdiv{
-    margin: auto;
-    text-align: center;
-}
+    display: flex;
+    justify-content: center;
 
-input[type="text"]{
-    height: 40px;
-    font-size: 20px;;
 }
-
-#submitweather{
-    height: 40px;
+.city{
+    padding: 5px;
+    margin-bottom: 30px;
+}
+.show{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.c{
+    position: absolute;
+    font-family: 'Open Sans', sans-serif;
+    top: 30%;   
+    left: 20%;
+    font-size: 60px;
+}
+.d{
+    position: absolute;
+    top: 50%;
+    left: 21%;
     font-size: 20px;
-    font-weight: bold;
-}
+    font-family: 'Rubik', sans-serif;
 
-#show{
-    margin: auto;
-    width: 60%;
-}
-
-span{
-    margin: auto;
-    width: 60%;
-    left: 50%;
-}
-
-footer{
-    background-color: #4aa1f3;
-    width: 100%;
-    height:80px;
-    color:rgb(14, 13, 13);
-    font-size : 20px;
-    font-weight: bold;
-    bottom:0px;
-    position: bottom;
-
-}
-
-#errorcity{
-    width: 50%;
-    font-size: 25px;
-    text-align: center;
-    margin: auto;
 }

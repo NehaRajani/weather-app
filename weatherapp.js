@@ -16,6 +16,8 @@ $(document).ready(function () {
                 success: function (data) {
                     var widget = show(data);                       /*results stored in this data paramter*/
                     $("#show").html(widget);
+                    console.log(data);
+                    
                     $("#error").html('');                          /*WHEN u have empty feild and enter u see the msg but when next u correct ursle so to vanish the msg u have this statement*/
                                                                    /*for console output u can use console.log bt for real output we make a funtion below and call it*/
                 }
@@ -31,19 +33,65 @@ $(document).ready(function () {
 });
 
 function show(data) {
+    console.log(data);
+    
     var temp = data.main.temp;
-    return "<h3 style='font-size:40px; font-weight:bold;' class='text-center'>Current Weather for " + data.name + "," +
-        data.sys.country + "</h3>" +
-        "<h3 style='padding-left:40px;'><strong>Weather</strong>:" + data.weather[0].main + "</h3>" +
-        "<h3 style='padding-left:40px;'><strong>Description</strong>:<img src='http://openweathermap.org/img/w/" + data.weather[0].description + ".png'>" + data.weather[0].description + "</h3>" +
-        "<h3 style='padding-left:40px;'><strong>Temperature</strong>:" + temp + "&deg;C</h3>" +
-        "<h3 style='padding-left:40px;'><strong>Preasure</strong>:" + data.main.pressure + " hPa</h3>" +
-        "<h3 style='padding-left:40px;'><strong>Humidity</strong>:" + data.main.humidity + "%</h3>" +
-        "<h3 style='padding-left:40px;'><strong>Min.Tempreture</strong>:" + data.main.temp_min + "&deg;C</h3>" +
-        "<h3 style='padding-left:40px;'><strong>Max.Tempreture</strong>:" + data.main.temp_max + "&deg;C</h3>" +
-        "<h3 style='padding-left:40px;'><strong>Wind Speed</strong>:" + data.wind.speed + " m/s</h3>" +
-        "<h3 style='padding-left:40px;'><strong>Wind Direction</strong>:" + data.wind.deg + "&deg;</h3>";
+    var weather=data.weather[0].main;
+    var weatherdesc=data.weather[0].description;
+    var pressure=data.main.pressure;
+    var humidity= data.main.humidity;
+    var min_temp=data.main.temp_min;
+    var max_temp=data.main.temp_max;
+    var wind_speed=data.wind.speed;
+    var wind_dir=data.wind.deg;
+    $(".c").html(`${temp} &deg;C`);
+    $(".d").text(`${data.name}, ${data.sys.country} Built by Neha Rajani`);
+    switch(weather){
+        case "Clouds":$("#weatherstat").attr('src','http://yowindow.com/img/promo/spring_sunrize_800.jpg');
+                        
+                break;
+        case "Haze":$("#weatherstat").attr('src','https://i.cbc.ca/1.4780582.1533911330!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/hazy-skyline.jpg');
+                break;
+        case "Clear":$("#weatherstat").attr('src','https://i.imgur.com/TG2U2f1.jpg');
+                break;
+        case "Rain":$("#weatherstat").attr('src','https://i.stack.imgur.com/goBR5.jpg');
+                break;
+
+        case "Drizzle":$("#weatherstat").attr('src','https://3.bp.blogspot.com/-FtQf0dA9jt8/Vw7Lf9emr6I/AAAAAAAAA_g/7K93RG8ks-QzWRbPfJYumTyvyH_N_R02gCLcB/s1600/IMG_9146.JPG');
+    }
+    $("#show").html(`<ul class="list-group">
+                    <li class="list-group-item">Current Weather for :<strong>${data.name} <br>       ${ data.sys.country}</strong></li>
+                </ul>`);
+    $("#show2").html(`
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Weather: </strong> ${weather}</li>
+                    <li class="list-group-item"><strong>Weather Description: </strong> ${weatherdesc}</li>
+                </ul>
+                `);
+    $("#show3").html(`
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Pressure: </strong> ${pressure}</li>
+                    <li class="list-group-item"><strong>Humidity: </strong> ${humidity}</li>
+                </ul>
+                `);
+    $("#show4").html(`
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Min-Temp: </strong> ${min_temp} &deg;C</li>
+                    <li class="list-group-item"><strong>Max-Temp: </strong> ${max_temp} &deg;C</li>
+                </ul>
+                `);
+    $("#show5").html(`
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Wind-Speed: </strong> ${wind_speed}</li>
+                    <li class="list-group-item"><strong>Wind-Direction: </strong> ${wind_dir}</li>
+                </ul>
+                `);
+    
+
 }
+
+     
+
 
 
 

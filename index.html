@@ -4,58 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
+
     <title>Current weather information</title>
 </head>
 
 <body>
-    <div class="jumbotron">
-        <h2 class="text-center">Get Current Weather</h2>
-    </div>
-
-    <div class="container" style="height:auto;">
-        <div class="row" style="margin-bottom:20px">
-            <h3 class="text-center text-primary">Enter City Name</h3>
-        </div>
-
-        <div class="form-group form-inline" id="rowdiv">
-            <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
-            <button id="submitweather" class="btn btn-primary">Search City</button>
-        </div>
-
-        <h5 id="error" class="text-center"></h5>
-
-        <div id="show"></div>
-
-    </div>
-
-    <footer class="container-fluid">
-            <div class="row text-center" style="margin-top:auto; padding-top:25px;">
-                <p>Copyright &copy; Curent Weather App</p>
+    <div class="container-fluid text-center">
+        <div class="row" style="height:100vh">
+            <div class="col-md-6" id="image" style="margin:0;padding: 0;">
+                <div class="c">Weather App</div>
+                <div class="d">Built By Neha Rajani</div>
+                <img src="https://i.pinimg.com/originals/23/55/e8/2355e8886cb63844f6f38b8d1f1b9f18.png" id="logo" width="50px"
+                    height="50px">
+                <img id="weatherstat" src="https://www.pptgrounds.com/wp-content/uploads/2013/12/Blue-Sky-Texture-PPT-Backgrounds.jpg"
+                    width="100%" height="100%">
+                
             </div>
-    oga
-</footer>
+            <div class="col-md-6" id="details" style="background-repeat: no-repeat;background-size: cover; background-image: url(https://f4.bcbits.com/img/a2628119933_10.jpg);">
+                <div class="row justify-content-center">
+                    <h3 class="text-center" style="color:wheat;">Enter City Name :</h3>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="form-group form-inline" id="rowdiv">
+                        <input type="text" name="city" id="city" class="form-control" placeholder="City Name">
+                        <button id="submitweather" class="btn btn-primary">Search City</button>
+                    </div>
+                </div>
+                <div class="row justify-content-center" style="display:block;margin:5px;">
+                    <div class="card-block" id="show"></div>
+                </div>
+                <div class="row justify-content-center" style="display:block;margin:5px;">
+                    <div class="card-block" id="show2" ></div>
+                </div>
+                <div class="row justify-content-center"  style="display:block;margin:5px;">
+                    <div class="card-block" id="show3"></div>
+                </div>
+                <div class="row justify-content-center" style="display:block;margin:5px;">
+                    <div class="card-block" id="show4"></div>
+                </div>
+                <div class="row justify-content-center" style="display:block;margin:5px;">
+                    <div class="card-block" id="show5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <!-- Latest compiled JavaScript 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>>
---><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 
     <script src="weatherapp.js"></script>
 </body>
+
 </html>
 
 
@@ -69,11 +88,11 @@
 
 
 
-    <!--using emmet plugin to use html shortcuts-->
-    <!--an exclamator and enter will give u struature of html add cdn of bootstrap         
+<!--using emmet plugin to use html shortcuts-->
+<!--an exclamator and enter will give u struature of html add cdn of bootstrap         
  -->
 
-    <!--   Fonts used
+<!--   Fonts used
 http://www.1001fonts.com/roboto-font....
 
 Fonts used for icons
@@ -83,7 +102,7 @@ Font used for weather icons
 https://erikflowers.github.io/weather...
 -->
 
-    <!--  Creating a Jumbotron
+<!--  Creating a Jumbotron
 A jumbotron indicates a big box for calling extra attention to some special content or information.
 
 A jumbotron is displayed as a grey box with rounded corners. It also enlarges the font sizes of the text inside it.
@@ -92,7 +111,7 @@ Tip: Inside a jumbotron you can put nearly any valid HTML, including other Boots
 
 Use a <div> element with class .jumbotron to create a jumbotron:-->
 
-    <!--
+<!--
     API stands for Application Programming Interface. API is basically a way for programmers to communicate with certain applications. The use of APIs in building applications is becoming increasingly popular. 
 
 Open weather map API is simple, clear and free to use.​ 
