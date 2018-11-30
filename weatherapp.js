@@ -58,6 +58,9 @@ function show(data) {
                 break;
 
         case "Drizzle":$("#weatherstat").attr('src','https://3.bp.blogspot.com/-FtQf0dA9jt8/Vw7Lf9emr6I/AAAAAAAAA_g/7K93RG8ks-QzWRbPfJYumTyvyH_N_R02gCLcB/s1600/IMG_9146.JPG');
+                break;
+        case "Fog":$("#weatherstat").attr('src','https://www.pakistankakhudahafiz.com/pkkhnew/wp-content/uploads/2016/01/fog-2.jpg');
+                    break;
     }
     $("#show").html(`<ul class="list-group">
                     <li class="list-group-item">Current Weather for :<strong>${data.name} <br>       ${ data.sys.country}</strong></li>
